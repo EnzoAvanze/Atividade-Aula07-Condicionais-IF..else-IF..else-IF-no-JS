@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElseIf</title>
+    <style>
+        body { 
+            font-family: sans-serif; 
+            text-align: center; 
+          padding: 50px; 
+          background-color: #f0f2f5; 
+        }
+
+        .painel { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            display: inline-block; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+        }
+
+        input { 
+            padding: 10px; 
+            width: 80px; 
+            font-size: 18px; 
+        }
+
+        button { 
+            padding: 10px 20px; 
+            cursor: pointer; 
+            background: #28a745; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="painel">
+        <h2>Desempenho Escolar</h2>
+        <p>Descubra seu desempenho pela nota</p>
+        <input type="number" id="nota">
+        <button onclick="suaNota()">Enviar</button>
+        <p id="desempenho"></p>
+    </div>
+
+    <script>
+        function suaNota() {
+            let notaenv = document.getElementById('nota').value;
+            let notas = Number(notaenv)
+            let desempenhof = document.getElementById('desempenho');
+
+            if (notas >10 || notas <0){
+                alert ("Nota Invalida")
+            }else if(notas >= 9){
+                desempenhof.innerHTML = "Parabéns você teve um Excelente desempenho!"
+            }else if(notas >= 7){
+                desempenhof.innerHTML = "Parabens você está acima da média!"
+            }else if(notas >= 5){
+                desempenhof.innerHTML = "Infelizmente você teve um desempenho abaixo da média, irá para o conselho e poderá ser reprovado"
+            }else {
+                desempenhof.innerHTML = "Infelizmente você foi reprovado"
+            }
+        }
+    </script>
+</body>
+</html>
